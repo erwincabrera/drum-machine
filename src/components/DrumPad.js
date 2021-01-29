@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Sound } from "./Sound";
 
 export const DrumPad = ({ id, audio, playKey }) => {
   const soundRef = React.useRef();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key.toLowerCase() === playKey.toLowerCase()) {
+        soundRef.current.play();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown");
+  }, [soundRef.current]);
 
   const handleClick = () => {
     soundRef.current.play();
