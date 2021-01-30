@@ -7,7 +7,7 @@ export const DrumPad = ({ id, audio, playKey }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key.toLowerCase() === playKey.toLowerCase()) {
-        soundRef.current.play();
+        playSound();
       }
     };
 
@@ -16,6 +16,10 @@ export const DrumPad = ({ id, audio, playKey }) => {
   }, [soundRef.current]);
 
   const handleClick = () => {
+    playSound();
+  };
+
+  const playSound = () => {
     soundRef.current.play();
   };
 
