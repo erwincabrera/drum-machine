@@ -13,7 +13,7 @@ export const DrumPad = (props) => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown");
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [soundRef.current]);
 
   const handleClick = () => {
