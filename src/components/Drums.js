@@ -11,17 +11,59 @@ import sideStick from "../audio/side-stick.mp3";
 import snare from "../audio/snare.mp3";
 
 export const Drums = () => {
+  const drums = [
+    {
+      id: "clap",
+      audio: clap,
+      playKey: "Q",
+    },
+    {
+      id: "closed-hh",
+      audio: closedHh,
+      playKey: "W",
+    },
+    {
+      id: "kick-hat",
+      audio: kickHat,
+      playKey: "E",
+    },
+    {
+      id: "kick",
+      audio: kick,
+      playKey: "A",
+    },
+    {
+      id: "open-hh",
+      audio: openHh,
+      playKey: "S",
+    },
+    {
+      id: "punchy-kick",
+      audio: punchyKick,
+      playKey: "D",
+    },
+    {
+      id: "shaker",
+      audio: shaker,
+      playKey: "Z",
+    },
+    {
+      id: "side-stick",
+      audio: sideStick,
+      playKey: "X",
+    },
+    {
+      id: "snare",
+      audio: snare,
+      playKey: "C",
+    },
+  ];
+
   return (
     <div>
-      <DrumPad id="clap" audio={clap} playKey="Q" />
-      <DrumPad id="closed-hh" audio={closedHh} playKey="W" />
-      <DrumPad id="kick-hat" audio={kickHat} playKey="E" />
-      <DrumPad id="kick" audio={kick} playKey="A" />
-      <DrumPad id="open-hh" audio={openHh} playKey="S" />
-      <DrumPad id="punchy-kick" audio={punchyKick} playKey="D" />
-      <DrumPad id="shaker" audio={shaker} playKey="Z" />
-      <DrumPad id="side-stick" audio={sideStick} playKey="X" />
-      <DrumPad id="snare" audio={snare} playKey="C" />
+      {drums.map((eachDrum) => (
+        <DrumPad key={eachDrum.id} {...eachDrum} />
+      ))}
     </div>
   );
 };
