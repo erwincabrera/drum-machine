@@ -16,51 +16,60 @@ export const Drums = () => {
       id: "clap",
       audio: clap,
       playKey: "Q",
+      label: "Clap",
     },
     {
       id: "closed-hh",
       audio: closedHh,
       playKey: "W",
+      label: "Closed HH",
     },
     {
       id: "kick-hat",
       audio: kickHat,
       playKey: "E",
+      label: "Kick n' Hat",
     },
     {
       id: "kick",
       audio: kick,
       playKey: "A",
+      label: "Kick",
     },
     {
       id: "open-hh",
       audio: openHh,
       playKey: "S",
+      label: "Open HH",
     },
     {
       id: "punchy-kick",
       audio: punchyKick,
       playKey: "D",
+      label: "Punchy Kick",
     },
     {
       id: "shaker",
       audio: shaker,
       playKey: "Z",
+      label: "Shaker",
     },
     {
       id: "side-stick",
       audio: sideStick,
       playKey: "X",
+      label: "Side Stick",
     },
     {
       id: "snare",
       audio: snare,
       playKey: "C",
+      label: "Snare",
     },
   ];
 
   const handlePlaySound = (drum) => {
-    console.log(drum.id);
+    console.log(drum.label);
   };
 
   return (
