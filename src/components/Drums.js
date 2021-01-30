@@ -59,10 +59,18 @@ export const Drums = () => {
     },
   ];
 
+  const handlePlaySound = (drum) => {
+    console.log(drum.id);
+  };
+
   return (
     <div>
       {drums.map((eachDrum) => (
-        <DrumPad key={eachDrum.id} {...eachDrum} />
+        <DrumPad
+          key={eachDrum.id}
+          {...eachDrum}
+          onPlaySound={handlePlaySound}
+        />
       ))}
     </div>
   );

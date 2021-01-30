@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Sound } from "./Sound";
 
-export const DrumPad = ({ id, audio, playKey }) => {
+export const DrumPad = (props) => {
+  const { id, audio, playKey, onPlaySound } = props;
   const soundRef = React.useRef();
 
   useEffect(() => {
@@ -21,6 +22,7 @@ export const DrumPad = ({ id, audio, playKey }) => {
 
   const playSound = () => {
     soundRef.current.play();
+    onPlaySound(props);
   };
 
   return (
