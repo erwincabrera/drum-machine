@@ -10,7 +10,7 @@ import shaker from "../audio/shaker.mp3";
 import sideStick from "../audio/side-stick.mp3";
 import snare from "../audio/snare.mp3";
 
-export const Drums = () => {
+export const Drums = ({ onPlaySound }) => {
   const drums = [
     {
       id: "clap",
@@ -69,7 +69,7 @@ export const Drums = () => {
   ];
 
   const handlePlaySound = (drum) => {
-    console.log(drum.label);
+    onPlaySound(drum.label);
   };
 
   return (
