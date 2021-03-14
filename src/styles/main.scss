@@ -6,6 +6,10 @@ $primary-color: #333;
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ::placeholder {
